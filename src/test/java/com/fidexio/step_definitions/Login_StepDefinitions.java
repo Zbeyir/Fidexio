@@ -9,7 +9,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 
-public class Login_StepDefinitionsValid {
+public class Login_StepDefinitions {
 
     LoginBasePage loginBasePage = new LoginBasePage();
     HomePage homePage = new HomePage();
@@ -49,5 +49,14 @@ public class Login_StepDefinitionsValid {
         System.out.println(actualTitle);
         Assert.assertEquals(expectedTitle, actualTitle);
     }
+
+    @Then("user should see on the login page {string}")
+    public void user_should_see_on_the_login_page(String string) {
+        String expectedMessage = "Wrong login/password";
+        String actualMessage = homePage.wrongMessage.getText();
+        System.out.println(actualMessage);
+        Assert.assertEquals(expectedMessage, actualMessage);
+    }
+
 
 }

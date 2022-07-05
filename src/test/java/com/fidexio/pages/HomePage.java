@@ -13,4 +13,9 @@ public class HomePage {
 
     @FindBy(className = "o_thread_title")
     public WebElement homePageTitle;
+
+    @FindBy(xpath = "//p[@class='alert alert-danger']")
+    public WebElement wrongMessage;
+
+
 }
