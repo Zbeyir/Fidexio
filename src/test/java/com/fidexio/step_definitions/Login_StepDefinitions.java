@@ -17,6 +17,7 @@ public class Login_StepDefinitions {
     @Given("User is on fidexio home page")
     public void user_is_on_fidexio_home_page() {
         Driver.getDriver().get(ConfigurationReader.getProperty("url"));
+       // Driver.getDriver().get("https://qa.fidexio.com");
     }
 
     @Given("user should see {string}")
@@ -57,6 +58,28 @@ public class Login_StepDefinitions {
         System.out.println(actualMessage);
         Assert.assertEquals(expectedMessage, actualMessage);
     }
+
+    @Then("user should see on the login page {string} if the password is empty")
+    public void user_should_see_on_the_login_page_if_the_password_is_empty(String string) {
+        String expectedMessageEmptyUser = "Lütfen bu alanı doldurun.";
+        String actualMessageEmptyUser = loginBasePage.password.getAttribute("validationMessage");
+        System.out.println(actualMessageEmptyUser);
+
+        Assert.assertEquals(expectedMessageEmptyUser, expectedMessageEmptyUser);
+
+    }
+
+    @Then("user should see on the login page {string} if the username is empty")
+    public void user_should_see_on_the_login_page_if_the_username_is_empty(String string) {
+        String expectedMessageEmptyPassword = "Lütfen bu alanı doldurun.";
+        String actualMessageEmptyPassword = loginBasePage.userName.getAttribute("validationMessage");
+        System.out.println(actualMessageEmptyPassword);
+
+        Assert.assertEquals(expectedMessageEmptyPassword, actualMessageEmptyPassword);
+
+
+    }
+
 
 
 }

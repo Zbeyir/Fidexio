@@ -3,6 +3,7 @@ package com.fidexio.utilities;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.util.concurrent.TimeUnit;
@@ -65,7 +66,9 @@ public class Driver {
 
             switch (browserType){
                 case "chrome":
-                    WebDriverManager.chromedriver().setup();
+                   WebDriverManager.chromedriver().setup();
+                   // ChromeOptions options = new ChromeOptions();  // bu ve bundan sonra satir dil ayari
+                  //  options.addArguments("--lang=en");
                     driverPool.set(new ChromeDriver()); // yerine-->  driver = new ChromeDriver();
                     driverPool.get().manage().window().maximize(); // sadece driver. yaziyordu onu yerine
                     driverPool.get().manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);// sadece driver. yaziyordu onu yerine

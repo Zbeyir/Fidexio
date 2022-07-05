@@ -17,7 +17,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "com/fidexio/step_definitions",
         dryRun = false,
-        tags = "@wip3 or @wip4",
+        tags = "@wip7 or @wip8",
         publish = false
 
 )

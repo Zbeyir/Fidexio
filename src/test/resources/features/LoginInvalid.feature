@@ -31,3 +31,5 @@ Feature: "Wrong login/password" should be displayed for invalid
       | salesmanagerr90@info.com | salesmanager  |
       | salesmanager90@info.com  | Salesmanager  |
       | salesmanager90@info.com  | salesmanagere |
+
+
