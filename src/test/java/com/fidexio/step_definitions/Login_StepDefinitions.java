@@ -5,6 +5,7 @@ import com.fidexio.pages.LoginBasePage;
 import com.fidexio.utilities.ConfigurationReader;
 import com.fidexio.utilities.Driver;
 import io.cucumber.java.cy_gb.A;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -21,11 +22,12 @@ public class Login_StepDefinitions {
        // Driver.getDriver().get("https://qa.fidexio.com");
     }
 
-    @Given("user should see {string}")
-    public void user_should_see(String string) {
-
+    @And("User should see on the login page{string}")
+    public void userShouldSeeOnTheLoginPage(String expectedTitle) {
+        String actualTitle = Driver.getDriver().getTitle();
+        System.out.println(actualTitle);
+        Assert.assertEquals(expectedTitle, actualTitle);
     }
-
 
     @When("user enters {string} to username field")
     public void user_enters_to_username_field(String string) {
@@ -97,8 +99,6 @@ public class Login_StepDefinitions {
         String actualType = loginBasePage.password.getAttribute("type");
         Assert.assertEquals(expectedType, actualType);
     }
-
-
 
 
 

@@ -4,6 +4,7 @@ Feature: Users can log in with valid credentials
   @wip1 #TC01
   Scenario Outline: Login page verification as PosManager
     Given User is on fidexio home page
+    And User should see on the login page"Login | Best solution for startups"
     And user enters "<userName>" to username field
     When user enters "<password>" to password field
     And user click on Login button
