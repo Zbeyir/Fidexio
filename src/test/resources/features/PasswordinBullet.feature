@@ -1,13 +1,12 @@
-Feature: Users can log in with valid credentials
-  (We have 5 types of users but will test only 2 user: PosManager, SalesManager)
+Feature: User should see the password in bullet signs by default
 
-  @wip1 #TC01
+  @wip10 #TC10
   Scenario Outline: Login page verification as PosManager
     Given User is on fidexio home page
     And user enters "<userName>" to username field
     When user enters "<password>" to password field
-    And user click on Login button
-    Then user should on the home #Inbox page "Congratulations, your inbox is empty"
+    Then User should see the password in bullet signs by default
+
 
     Examples:
       | userName              | password   |
@@ -17,14 +16,12 @@ Feature: Users can log in with valid credentials
       | posmanager59@info.com | posmanager |
 
 
-  @wip2 #TC02
+  @wip11 #TC11
   Scenario Outline: Login page verification as SalesManager
     Given User is on fidexio home page
     And user enters "<userName>" to username field
     When user enters "<password>" to password field
-    And user click on Login button
-    Then user should on the home #Inbox page "Congratulations, your inbox is empty"
-
+    Then User should see the password in bullet signs by default
     Examples:
       | userName                | password     |
       | salesmanager90@info.com | salesmanager |

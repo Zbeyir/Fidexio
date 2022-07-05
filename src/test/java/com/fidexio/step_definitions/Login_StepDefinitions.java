@@ -4,6 +4,7 @@ import com.fidexio.pages.HomePage;
 import com.fidexio.pages.LoginBasePage;
 import com.fidexio.utilities.ConfigurationReader;
 import com.fidexio.utilities.Driver;
+import io.cucumber.java.cy_gb.A;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -76,9 +77,28 @@ public class Login_StepDefinitions {
         System.out.println(actualMessageEmptyPassword);
 
         Assert.assertEquals(expectedMessageEmptyPassword, actualMessageEmptyPassword);
-
-
     }
+
+    @When("user click reset password button")
+    public void user_click_reset_password_button() {
+        loginBasePage.resetPassword.click();
+    }
+    @Then("user should go to the Reset password link")
+    public void user_should_go_to_the_reset_password_link() {
+        String expectedTitle="Reset password | Best solution for startups";
+        String actualTitle= Driver.getDriver().getTitle();
+        System.out.println(actualTitle);
+        Assert.assertEquals(expectedTitle, actualTitle);
+    }
+
+    @Then("User should see the password in bullet signs by default")
+    public void user_should_see_the_password_in_bullet_signs_by_default() {
+        String expectedType = "password";
+        String actualType = loginBasePage.password.getAttribute("type");
+        Assert.assertEquals(expectedType, actualType);
+    }
+
+
 
 
 
