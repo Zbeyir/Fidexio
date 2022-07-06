@@ -42,12 +42,14 @@ public class LogOut_StepDefinition {
 
     @When("User click Log Out button")
     public void user_click_log_out_button() {
-        Select dropdown = new Select( logOutPage.menuOption5);
-        dropdown.getAllSelectedOptions();
+        BrowserUtils.sleep(3);
+        logOutPage.poss.click();
+        logOutPage.logout.click();
+        BrowserUtils.sleep(3);
 
     }
 
-   /* @Then("After logout User should see on the login page {string}")
+    @Then("After logout User should see on the login page {string}")
 
 
     public void after_logout_user_should_see_on_the_login_page(String expectedTitle) {
@@ -56,7 +58,19 @@ public class LogOut_StepDefinition {
         Assert.assertEquals(expectedTitle, actualTitle);
     }
 
-    */
+    @And("User clicks the back button")
+    public void user_clicks_the_back_button() {
+      Driver.getDriver().navigate().back();
+      BrowserUtils.sleep(2);
+    }
+    @Then("User should see on the page {string}")
+    public void user_should_see_on_the_page(String expectedMessage) {
+       String actualMessage = logOutPage.afterLogoutWrongMessage.getText();
+       Assert.assertEquals(expectedMessage, actualMessage);
+        System.out.println(actualMessage);
+        BrowserUtils.sleep(2);
+    }
+
 
 
 }
