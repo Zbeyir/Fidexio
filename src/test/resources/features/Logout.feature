@@ -2,7 +2,7 @@ Feature: As a user, I should be able to log out.
 
 
   #TC12
-  @wip12
+  @FIDEX-492
   Scenario Outline: Verify that users can log out and ends up in login page
     Given User is navigate to fidexio home page
     And User enters valid "<userName>" to username field
@@ -18,7 +18,7 @@ Feature: As a user, I should be able to log out.
       | salesmanager90@info.com | salesmanager |
 
     #TC13
-  @wip13
+  @FIDEX-495
   Scenario Outline: The user can not go to the home page again by clicking the step
   back button after successfully logged out.
     Given User is navigate to fidexio home page

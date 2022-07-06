@@ -11,13 +11,14 @@ import org.junit.runner.RunWith;
                 //"pretty",
                 "html:target/cucumber-report.html",
                 "rerun:target/rerun.txt",
-                "me.jvt.cucumber.report.PrettyReports:target/cucumber"
+                "me.jvt.cucumber.report.PrettyReports:target/cucumber",
+                "json:target/jira-report.json" // cira da cikti almak icin bu kodu yaz
 
         },
         features = "src/test/resources/features",
         glue = "com/fidexio/step_definitions",
         dryRun = false,
-        tags = "@wip13",
+        tags = "@FIDEX-495",
         publish = false
 
 )

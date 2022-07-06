@@ -1,7 +1,7 @@
 Feature: As a user, I should be able to log in so that I can land on homepage.
   (We have 5 types of users but will test only 2 user: PosManager, SalesManager)
 
-  @wip1 #TC01
+  @FIDEX-458 #TC01
   Scenario Outline: Login page verification with VALID data as PosManager
     Given User is on fidexio home page
     And User should see on the login page"Login | Best solution for startups"
@@ -18,7 +18,7 @@ Feature: As a user, I should be able to log in so that I can land on homepage.
       | posmanager59@info.com | posmanager |
 
 
-  @wip2 #TC02
+  @FIDEX-466 #TC02
   Scenario Outline: Login page verification with VALID data as SalesManager
     Given User is on fidexio home page
     And user enters "<userName>" to username field
@@ -33,7 +33,7 @@ Feature: As a user, I should be able to log in so that I can land on homepage.
       | salesmanager49@info.com | salesmanager |
       | salesmanager61@info.com | salesmanager |
 
-  @wip3 #TC03
+  @FIDEX-468 #TC03
   Scenario Outline: Login page verification with INVALID data as PosManager
     Given User is on fidexio home page
     And user enters "<userName>" to username field
@@ -49,7 +49,7 @@ Feature: As a user, I should be able to log in so that I can land on homepage.
       | posmanager259@info.com | posmanager  |
 
 
-  @wip4 #TC04
+  @FIDEX-470 #TC04
   Scenario Outline: Login page verification with INVALID data as SalesManager
     Given User is on fidexio home page
     And user enters "<userName>" to username field
@@ -65,7 +65,7 @@ Feature: As a user, I should be able to log in so that I can land on homepage.
       | salesmanager90@info.com  | salesmanagere |
 
 
-  @wip5 #TC05
+  @FIDEX-472 #TC05
   Scenario Outline: Login page verification with WITHOUT PASSWORD as PosManager
     Given User is on fidexio home page
     And user enters "<userName>" to username field
@@ -78,7 +78,7 @@ Feature: As a user, I should be able to log in so that I can land on homepage.
       | posmanager90@info.com |          |
       | posmanager49@info.com |          |
 
-  @wip6 #TC06
+  @FIDEX-474 #TC06
   Scenario Outline: Login page verification with WITHOUT USER NAME as PosManager
     Given User is on fidexio home page
     And user enters "<userName>" to username field
@@ -91,7 +91,7 @@ Feature: As a user, I should be able to log in so that I can land on homepage.
       |          | posmanager |
       |          | posmanager |
 
-  @wip7 #TC07
+  @FIDEX-476 #TC07
   Scenario Outline: Login page verification with WITHOUT PASSWORD as SalesManager
     Given User is on fidexio home page
     And user enters "<userName>" to username field
@@ -104,7 +104,7 @@ Feature: As a user, I should be able to log in so that I can land on homepage.
       | salesmanager90@info.com |          |
       | salesmanager49@info.com |          |
 
-  @wip8 #TC08
+  @FIDEX-478 #TC08
   Scenario Outline: Login page verification with WITHOUT USER NAME as SalesManager
     Given User is on fidexio home page
     And user enters "<userName>" to username field
@@ -118,14 +118,14 @@ Feature: As a user, I should be able to log in so that I can land on homepage.
       |          | salesManager |
 
 
-  @wip9 #TC09
+  @FIDEX-480 #TC09
   Scenario: User land on the ‘reset password’ page after clicking on the "Reset password" link
     Given User is on fidexio home page
     When user click reset password button
     Then user should go to the Reset password link
 
 
-  @wip10 #TC10
+  @FIDEX-482 #TC10
   Scenario Outline: Login page verification as PosManager,
   User should see the password in bullet signs by default
     Given User is on fidexio home page
@@ -142,7 +142,7 @@ Feature: As a user, I should be able to log in so that I can land on homepage.
       | posmanager59@info.com | posmanager |
 
 
-  @wip11 #TC11
+  @FIDEX-486 #TC11
   Scenario Outline: Login page verification as SalesManager
     Given User is on fidexio home page
     And user enters "<userName>" to username field
